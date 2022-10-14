@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Nationality;
 use App\Models\Person;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class PersonSeeder extends Seeder
@@ -15,6 +15,17 @@ class PersonSeeder extends Seeder
      */
     public function run()
     {
-        Person::factory(20)->create();
+        $nats = Nationality::all()->toArray();
+
+        foreach (range(1, 20) as $_) {
+            Person::factory()
+                ->create()
+                ->nationalities()->attach(
+                    array_map(
+                        fn ($n) => $nats[$n]['id'],
+                        (array) array_rand($nats, rand(1, count($nats)))
+                    )
+                );
+        }
     }
 }

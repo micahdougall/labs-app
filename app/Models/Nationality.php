@@ -4,14 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Nationality extends Model
 {
     use HasFactory;
 
-    public function people(): HasMany
+    public function people(): BelongsToMany
     {
-        return $this->hasMany(Person::class);
+        return $this->belongsToMany(Person::class);
     }
 }

@@ -16,16 +16,18 @@ class CarSeeder extends Seeder
      */
     public function run()
     {
+        $people =Person::all();
+
         $cars = [
             "Honda" => ["Civic", "CRV", "Jazz", "Accord"],
             "Toyota" => ["Prius", "Avensis", "Rav4"],
             "Ford" => ["Escort", "Mondeo", "Fiesta", "Focus"],
             "BMW" => ["320", "535", "M4", "Z3"]
         ];
-        $people =Person::all();
 
         foreach (range(1, 20) as $_) {
             $make = array_rand($cars);
+
             Car::factory()->create([
                 'make' => $make,
                 'model' => $cars[$make][array_rand($cars[$make])],

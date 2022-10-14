@@ -11,12 +11,12 @@ return new class extends Migration
      *
      * @return void
      */
-    public function up(): void
+    public function up()
     {
-        Schema::create('person_nationality', static function (Blueprint $table) {
-            $table->primary(['person_id', 'nationality_id']);
+        Schema::create('nationality_person', static function (Blueprint $table) {
+            $table->primary(['nationality_id', 'person_id']);
+            $table->foreignId('nationality_id')->constrained()->cascadeOnDelete();
             $table->foreignId('person_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('nationality_id')->constrained()->cascadeOnUpdate();
             $table->timestamps();
         });
     }
@@ -26,8 +26,8 @@ return new class extends Migration
      *
      * @return void
      */
-    public function down(): void
+    public function down()
     {
-        Schema::dropIfExists('person_nationality');
+        Schema::dropIfExists('nationality_person');
     }
 };
