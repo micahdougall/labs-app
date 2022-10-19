@@ -22,6 +22,7 @@ class PersonSeeder extends Seeder
                 ->create()
                 ->nationalities()->attach(
                     array_map(
+                        // Get a random number of random ids from Nationalities
                         fn ($n) => $nats[$n]['id'],
                         (array) array_rand($nats, rand(1, count($nats)))
                     )
