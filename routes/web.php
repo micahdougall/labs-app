@@ -12,43 +12,15 @@
 |
 */
 
+use App\Http\Controllers\PersonController;
 use App\Models\Person;
 use Illuminate\Support\Facades\Route;
-
-Route::get('/people', function () {
-    return view('people.index', [
-        'people' => Person::all()
-    ]);
-});
-
-Route::get('/people/{person:id}', function (Person $person) {
-    return view('people.show', [
-        'person' => $person
-    ]);
-});
 
 Route::get('/', function () {
     return view('welcome');
 });
 
+Route::resource('people', PersonController::class);
 
-Route::get('labs2/string', function () {
-    return view('route', [
-        'route' => new App\Models\Route('Route 1', 'This is a string.')
-    ]);
-});
-
-Route::get('labs2/var/{route}', function ($route) {
-    return view('route', [
-        'route' => new App\Models\Route('Route 2',
-        "This is a variable from the URL: {$route}.")
-    ]);
-});
-
-Route::get('labs2/twovars/{var1}/{var2}', function ($var1, $var2) {
-    return view('route', [
-        'route' => new App\Models\Route('Route 2',
-            "These are two variables from the URL: {$var1}, {$var2}.")
-    ]);
-});
-
+Route::get('/route', fn () => view('route'));
+//Route::post('/test', fn () => view('test'));

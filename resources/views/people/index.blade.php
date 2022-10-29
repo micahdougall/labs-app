@@ -37,13 +37,13 @@
 {{--                                            </span>--}}
 {{--                                    </td>--}}
                                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                        <a href="/admin/posts/{{ $person->id }}/edit"
+                                        <a href="/people/{{ $person->id }}/edit"
                                            class="text-xs leading-5 font-semibold text-gray-800 rounded-lg bg-gray-100 hover:text-green-700 hover:bg-green-50 px-3 py-1">
                                             Edit
                                         </a>
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                        <form method="POST" action="/admin/posts/{{ $person->id }}">
+                                        <form method="POST" action="/people/{{ $person->id }}">
                                             @csrf
                                             @method('DELETE')
 

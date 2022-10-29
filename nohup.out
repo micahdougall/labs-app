@@ -1,0 +1,31 @@
+2022-10-29 09:28:54.765 plugin-container[3678:166447] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-10-29 09:28:54.765 plugin-container[3678:166447] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-10-29 09:28:54.770 plugin-container[3678:166447] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-10-29 09:28:54.770 plugin-container[3678:166447] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-10-29 09:28:54.773 plugin-container[3678:166457] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-10-29 09:28:54.773 plugin-container[3678:166457] nil host used in call to allowsAnyHTTPSCertificateForHost:
+UNSUPPORTED (log once): POSSIBLE ISSUE: unit 1 GLD_TEXTURE_INDEX_2D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable
+[fluent] Missing message in locale en-GB: 
+[fluent] Missing message in locale en-GB: 
+[fluent] Missing message in locale en-GB: 
+[fluent] Missing message in locale en-US: 
+[fluent] Missing message in locale en-US: 
+[fluent] Missing message in locale en-US: 
+[fluent] Couldn't find a message: 
+[fluent] Couldn't find a message: 
+[fluent] Couldn't find a message: 
+[dom/l10n] Errors during l10n mutation frame.
+[fluent] Missing message in locale en-GB: 
+[fluent] Missing message in locale en-US: 
+[fluent] Couldn't find a message: 
+[dom/l10n] Errors during l10n mutation frame.
+[fluent] Missing message in locale en-GB: 
+[fluent] Missing message in locale en-GB: 
+[fluent] Missing message in locale en-GB: 
+[fluent] Missing message in locale en-US: 
+[fluent] Missing message in locale en-US: 
+[fluent] Missing message in locale en-US: 
+[fluent] Couldn't find a message: 
+[fluent] Couldn't find a message: 
+[fluent] Couldn't find a message: 
+[dom/l10n] Errors during l10n mutation frame.
