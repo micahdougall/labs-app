@@ -1,16 +1,7 @@
-d
 <x-layout>
-    <x-setting heading="Create New Person">
+    <x-setting heading="Create New Person" class="max-w-3xl">
         <form method="POST" action="/people" enctype="multipart/form-data"
-            x-data="{
-                nationalities:{
-                    British: false,
-                    French: false,
-                    German: false,
-                    Spanish: false,
-                    Russian: false
-                }
-            }"
+            x-data="defineNationalities()"
         >
             @csrf
 
@@ -28,8 +19,8 @@ d
                 </div>
             </x-form.field>
 
-            <x-form.button>Publish</x-form.button>
+            <x-form.button>Add</x-form.button>
         </form>
-
     </x-setting>
 </x-layout>
+

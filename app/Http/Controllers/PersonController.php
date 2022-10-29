@@ -54,7 +54,11 @@ class PersonController extends Controller
 
    public function edit(Person $person)
    {
-       return view('people.edit', compact('person'));
+//       dd($person->nationalities()->get());
+       return view('people.edit', [
+           'person' => $person,
+           'nationalities' => Nationality::all()
+       ]);
    }
 
    public function update(Person $person)

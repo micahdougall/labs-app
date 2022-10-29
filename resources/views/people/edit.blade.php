@@ -1,30 +1,36 @@
 <x-layout>
-    <x-setting :heading="'Edit Person' . $person->title">
-        {{--        slot--}}
-        <form method="POST" action="/people/{{ $person->id }}" enctype="multipart/form-data">
+    <x-setting :heading="'Edit ' . $person->title . ' ' . $person->first_name . ' ' . $person->surname" class="max-w-3xl">
+        <form method="POST" action="/people/{{ $person->id }}" enctype="multipart/form-data"
+            x-data="{
+                nationalities:{
+                    British: false,
+                    French: false,
+                    German: false,
+                    Spanish: false,
+                    Russian: false
+                }
+            }"
+            >
+                @csrf
             @csrf
             @method('PATCH')
 
             <x-form.input name="title" :value="old('title', $person->title)"/>
+            <x-form.input textarea name="First Name" :value="old('first_name', $person->first_name)"/>
+            <x-form.input textarea name="Surname" :value="old('surname', $person->surname)"/>
+            <x-form.input textarea name="Address" :value="old('address', $person->address)"/>
 
-            <x-form.input textarea name="First Name">{{ old('first_name', $person->firstName) }}</x-form.input>
-            <x-form.input textarea name="Surname">{{ old('surname', $person->surname) }}</x-form.input>
 
-            <x-form.field name="nationality">
-            <x-form.label name="nationality"/>
-
-{{--                <select name="nationality_id" id="nationality_id">--}}
-{{--                    @foreach(App\Models\Nationality::all() as $nationality)--}}
-{{--                        <option--}}
-{{--                            value="{{ $nationality->id  }}"--}}
-{{--                            {{ old('nationality_id', $person->nationality) == $nationality->id ? 'selected' : ''  }}--}}
-{{--                        >{{ ucwords($nationality->name) }}--}}
-{{--                        </option>--}}
-{{--                    @endforeach--}}
-{{--                </select>--}}
-
-                <x-form.error name="nationality"/>
+            <x-form.field>
+                <x-form.label name="Nationalities"/>
+                <div class="flex space-x-2">
+                    @foreach($nationalities as $nationality)
+                        <x-form.nationality-select :nationality="$nationality"/>
+                    @endforeach
+                </div>
             </x-form.field>
+
+            <x-form.error name="nationality"/>
 
             <x-form.button>Update</x-form.button>
         </form>

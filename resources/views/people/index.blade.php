@@ -1,5 +1,5 @@
 <x-layout>
-    <x-setting heading="Manage People">
+    <x-setting heading="Manage People" class="max-w-6xl">
         <div class="flex flex-col">
             <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                 <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
@@ -38,7 +38,9 @@
 {{--                                    </td>--}}
                                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                         <a href="/people/{{ $person->id }}/edit"
-                                           class="text-xs leading-5 font-semibold text-gray-800 rounded-lg bg-gray-100 hover:text-green-700 hover:bg-green-50 px-3 py-1">
+                                           class="px-4 py-1 text-xs leading-5 font-semibold rounded shadow-sm
+                                           text-gray-800 bg-gray-100 uppercase
+                                           hover:bg-green-700 hover:text-white focus:ring hover:shadow-lg">
                                             Edit
                                         </a>
                                     </td>
@@ -48,7 +50,8 @@
                                             @method('DELETE')
 
                                             <button type="submit"
-                                                    class="inline-flex text-xs leading-5 font-semibold text-gray-400 hover:text-red-800 px-2">
+                                                    class="inline-flex px-3 text-xs leading-5 font-semibold uppercase
+                                                    text-gray-400 hover:text-red-800 hover:font-extrabold">
                                                 Delete
                                             </button>
                                         </form>
