@@ -29,6 +29,8 @@ class PersonController extends Controller
 
    public function store(Person $person)
    {
+//       dd(request());
+
        $nationalities = [];
        foreach (Nationality::all() as $nationality) {
            array_push($nationalities, $nationality->name);
@@ -54,7 +56,9 @@ class PersonController extends Controller
 
    public function edit(Person $person)
    {
+//       dd(request()->all());
 //       dd($person->nationalities()->get());
+//       dd(Nationality::all());
        return view('people.edit', [
            'person' => $person,
            'nationalities' => Nationality::all()
@@ -66,6 +70,16 @@ class PersonController extends Controller
        $person->update($this->validatePerson());
 
        return redirect('/')->with('success', 'Person updated!');
+   }
+
+    /**
+     * @throws \Throwable
+     */
+    public function destroy(Person $person)
+   {
+       $person->deleteOrFail();
+
+       return redirect(route('people.index'))->with('success', 'Person deleted');
    }
 
    protected function validatePerson(Person|null $person = null): array

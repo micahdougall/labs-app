@@ -2,16 +2,14 @@
     <x-setting :heading="'Edit ' . $person->title . ' ' . $person->first_name . ' ' . $person->surname" class="max-w-3xl">
         <form method="POST" action="/people/{{ $person->id }}" enctype="multipart/form-data"
             x-data="{
-                nationalities:{
-                    British: false,
-                    French: false,
-                    German: false,
-                    Spanish: false,
-                    Russian: false
-                }
+                nationalities: {{ $nationalities }},
+
+                oldNationalities: {{ $person->nationalities }},
+
+                name: 'test'
             }"
-            >
-                @csrf
+              x-modelable="name"
+        >
             @csrf
             @method('PATCH')
 

@@ -1,7 +1,9 @@
 <x-layout>
     <x-setting heading="Create New Person" class="max-w-3xl">
         <form method="POST" action="/people" enctype="multipart/form-data"
-            x-data="defineNationalities()"
+            x-data="{
+                nationalities: {{ $nationalities }}
+            }"
         >
             @csrf
 

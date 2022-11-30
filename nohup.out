@@ -39,3 +39,6 @@ UNSUPPORTED (log once): POSSIBLE ISSUE: unit 1 GLD_TEXTURE_INDEX_2D is unloadabl
 [fluent] Couldn't find a message: 
 [fluent] Couldn't find a message: 
 [dom/l10n] Errors during l10n mutation frame.
+[2022-10-29T23:20:01Z ERROR viaduct::backend::ffi] Missing HTTP status
+[2022-10-29T23:20:01Z ERROR viaduct::backend::ffi] Missing HTTP status
+[2022-10-29T23:20:01Z ERROR viaduct::backend::ffi] Missing HTTP status

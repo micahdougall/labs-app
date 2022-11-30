@@ -21,50 +21,22 @@
             <a href="/">
                 <img src="/images/logomark.min.svg" alt="Laracasts Logo" width="165" height="16">
             </a>
-{{--        </div>--}}
-{{--        <div class="mt-8 md:mt-0 flex items-center">--}}
-{{--            @auth--}}
-{{--                <x-dropdown>--}}
-{{--                    <x-slot name="trigger">--}}
-{{--                        <button class="text-xs font-bold uppercase">Welcome, {{ auth()->user()->name }}!</button>--}}
-{{--                    </x-slot>--}}
+        </div>
 
-{{--                    @admin--}}
-{{--                    <x-dropdown-item href="/admin/posts" :active="request()->is('admin/posts')">Manage Posts--}}
-{{--                    </x-dropdown-item>--}}
-{{--                    <x-dropdown-item href="/admin/posts/create" :active="request()->is('admin/posts/create')">New Post--}}
-{{--                    </x-dropdown-item>--}}
-{{--                    <x-dropdown-item href="/admin/dashboard">Dashboard</x-dropdown-item>--}}
-{{--                    @endadmin--}}
-
-{{--                    <x-dropdown-item href="#"--}}
-{{--                                     x-data="{}"--}}
-{{--                                     @click.prevent="document.querySelector('#logout-form').submit();"--}}
-{{--                    >Log Out--}}
-{{--                    </x-dropdown-item>--}}
-{{--                    <form id="logout-form" method="POST" action="/logout" class="hidden">--}}
-{{--                        @csrf--}}
-{{--                    </form>--}}
-{{--                </x-dropdown>--}}
-
-{{--            @else--}}
-{{--                <a href="/register" class="text-xs font-bold uppercase">Register</a>--}}
-{{--                <a href="/login" class="ml-5 text-xs font-bold uppercase">Log In</a>--}}
-{{--            @endauth--}}
-
-{{--        </div>--}}
     </nav>
 
     {{ $slot }}
 
     <footer
         id="newsletter"
-        class="bg-gray-100 border border-black border-opacity-5 rounded-xl text-center py-16 px-10 mt-16">
+        class="bg-gray-200 border border-black border-opacity-5 rounded-xl text-center py-16 px-10 mt-16">
         <div class="flex-1">
-            <p class="text-sm mb-0   text-gray-400">made with</p>
+            <p class="text-sm mb-0 text-gray-400">made with</p>
             <a href="/" class="inline-flex items-center">
                 <img src="/images/logomark.min.svg" alt="Laravel" class="w-12" width="50" height="52">
-                <img src="/images/logotype.min.svg" alt="Laravel" class="ml-5 sm:block" width="114" height="29">
+{{--                <img src="/images/logotype.min.svg" alt="Laravel" class="ml-5 sm:block" width="114" height="29">--}}
+
+                <img src="/images/logoheart.min.svg" alt="Laravel" class="ml-5 sm:block" width="114" height="29">
             </a>
         </div>
         <x-flash/>
