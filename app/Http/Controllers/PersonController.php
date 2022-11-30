@@ -29,8 +29,6 @@ class PersonController extends Controller
 
    public function store(Person $person)
    {
-//       dd(request());
-
        $nationalities = [];
        foreach (Nationality::all() as $nationality) {
            array_push($nationalities, $nationality->name);
@@ -56,9 +54,6 @@ class PersonController extends Controller
 
    public function edit(Person $person)
    {
-//       dd(request()->all());
-//       dd($person->nationalities()->get());
-//       dd(Nationality::all());
        return view('people.edit', [
            'person' => $person,
            'nationalities' => Nationality::all()
@@ -92,5 +87,20 @@ class PersonController extends Controller
             'address' => ['required', 'max:255']
         ]);
    }
+
+    public function apiIndex()
+    {
+        return Person::all();
+    }
+
+    public function apiStore(Request $request)
+    {
+        return Person::factory()->create([
+            'title' => 'Mr',
+            'first_name' => $request['name'],
+            'surname' => 'fake',
+            'address' => '22 Fake St.'
+        ]);
+    }
 
 }

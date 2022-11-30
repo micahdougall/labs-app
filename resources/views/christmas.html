@@ -15,43 +15,49 @@
 <body>
 <div class="h-screen bg-gray-100">
     <div class="m-auto fixed inset-0 flex flex-col space-y-4 items-center w-96 h-96"
-         id="message-binding">
+         id="names-binding">
         <label class="font-xs font-semibold text-gray-800"
                for="input">Please enter your name</label>
         <input class="rounded-lg border h-8 p-2
                       border-fuchsia-600 shadow-lg shadow-fuchsia-200/50
                       "
-               @apply
                type="text"
                id="input"
-               v-model="name"
+               v-model="newName"
         >
+        <p>{{ newName }}</p>
         <button class="rounded border pd-6 w-24
                        bg-gray-400
                        hover:bg-cyan-400 hover:font-bold hover:text-white"
-                v-on:click="showMessage">
+                v-on:click="addName">
             Enter
         </button>
-        <p class="font-semibold text-2xl text-fuchsia-700">
-            {{ message }}
-        </p>
+        <div class="font-extralight text-md text-gray-800">
+            <ul>
+                <li v-for="name in names">
+                    {{ name }}
+                </li>
+            </ul>
+        </div>
     </div>
 
     <script>
-        const Message = {
+        const Names = {
             data() {
                 return {
-                    message: "",
-                    name: ""
+                    newName: "",
+                    show: false,
+                    names: ["Tom", "Casey", "Randell"]
                 }
             },
             methods: {
-                showMessage() {
-                    this.message = "Happy Christmas " + this.name + "!";
+                addName() {
+                    this.names.push(this.newName);
+                    this.newName = ""
                 }
             }
         }
-        Vue.createApp(Message).mount('#message-binding');
+        Vue.createApp(Names).mount('#names-binding');
     </script>
 </div>
 

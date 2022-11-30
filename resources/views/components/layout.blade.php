@@ -1,11 +1,14 @@
 <!doctype html>
 
 <title>CSF304 Web Apps with Laravel</title>
-<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+{{--<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">--}}
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-<script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-<script src="/js/app.js"></script>
+{{--<script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>--}}
+{{--<script src="/js/app.js"></script>--}}
 
 
 <style>
