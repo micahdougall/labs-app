@@ -1,0 +1,59 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+<!--    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">-->
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div class="h-screen bg-gray-100">
+    <div class="m-auto fixed inset-0 flex flex-col space-y-4 items-center w-96 h-96"
+         id="message-binding">
+        <label class="font-xs font-semibold text-gray-800"
+               for="input">Please enter your name</label>
+        <input class="rounded-lg border h-8 p-2
+                      border-fuchsia-600 shadow-lg shadow-fuchsia-200/50
+                      "
+               @apply
+               type="text"
+               id="input"
+               v-model="name"
+        >
+        <button class="rounded border pd-6 w-24
+                       bg-gray-400
+                       hover:bg-cyan-400 hover:font-bold hover:text-white"
+                v-on:click="showMessage">
+            Enter
+        </button>
+        <p class="font-semibold text-2xl text-fuchsia-700">
+            {{ message }}
+        </p>
+    </div>
+
+    <script>
+        const Message = {
+            data() {
+                return {
+                    message: "",
+                    name: ""
+                }
+            },
+            methods: {
+                showMessage() {
+                    this.message = "Happy Christmas " + this.name + "!";
+                }
+            }
+        }
+        Vue.createApp(Message).mount('#message-binding');
+    </script>
+</div>
+
+</body>
+</html>

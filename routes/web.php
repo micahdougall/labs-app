@@ -29,7 +29,7 @@ Route::get('login', [SessionsController::class, 'create'])->middleware('guest');
 Route::post('sessions', [SessionsController::class, 'store'])->middleware('robot');
 Route::post('logout', [SessionsController::class, 'destroy'])->middleware('auth');
 
-Route::resource('people', PersonController::class)->middleware('throttle:5,2');
+Route::resource('people', PersonController::class);
 
 Route::get('/route', fn () => view('route'));
-//Route::post('/test', fn () => view('test'));
+Route::get('/dashboard', fn () => view('dashboard'));
